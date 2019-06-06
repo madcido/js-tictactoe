@@ -19,7 +19,7 @@
     cursor: pointer;
 }
 
-#board div:active {
+#board .clickable:active {
     box-shadow: 0 0 5px black inset;
     opacity: 0.95;
 }
