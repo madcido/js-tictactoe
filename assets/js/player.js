@@ -1,4 +1,4 @@
-const Player = (mark) => {
+function Player(mark) {
     this.mark = mark;
     this.score = 0;
 }
