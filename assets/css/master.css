@@ -1,33 +1,94 @@
+@import url('https://fonts.googleapis.com/css?family=Indie+Flower');
+
 body {
-  font-family: arial;
+    font-family: 'Indie Flower', cursive;
+    margin: 0;
+    background-color: #ece5d8;
 }
+
+h1 {
+    font-size: 40px;
+    margin: 20px;
+    text-align: center;
+}
+
+#reset {
+    width: 30px;
+    height: 30px;
+    background-color: #e00000;
+    border-radius: 50%;
+    border: 1px solid black;
+    box-shadow: 0 -1px 2px #660000 inset;
+    position: absolute;
+    right: 50%;
+    margin-right: -200px;
+    cursor: pointer;
+}
+
+#reset:active {
+    background-color: #c80000;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.7) inset;
+}
+
+#reset img {
+    width: 100%;
+    height: 100%;
+}
+
+#scores {
+    display: flex;
+    justify-content: space-around;
+    width: 400px;
+    margin: 0 auto;
+    font-size: 24px;
+}
+
+.active {
+    text-decoration: underline;
+    font-weight: bold;
+}
+
 #board {
-    background-color: black;
+    background-image: url("../images/ttt-bg.png");
+    background-size: 500px 500px;
+    background-position: 35% 25%;
     display: grid;
     grid: 1fr 1fr 1fr / 1fr 1fr 1fr;
     grid-gap: 5px;
     width: 400px;
     height: 400px;
-    margin: 0 auto;
-    margin-top: 50px;
-    padding: 5px;
+    margin: 30px auto;
 }
 
 #board div {
-    background-color: salmon;
     text-align: center;
     line-height: 130px;
-    font-size: 50px;
-    font-weight: bold;
-    border-radius: 3px;
+    font-size: 100px;
     cursor: pointer;
 }
 
-#board .x {
-  background-color: blue;
+.clickable:active {
+    background: radial-gradient(rgba(0, 0, 0, 0.15), transparent 66%);
 }
 
-#board .clickable:active {
-    box-shadow: 0 0 5px black inset;
-    opacity: 0.95;
+.X {
+    color: red;
+    animation-name: animation-X;
+    animation-duration: 0.7s;
+}
+
+@keyframes animation-X {
+    0% { color: transparent; }
+    100% { color: red; }
+}
+
+.O {
+    color: blue;
+    animation-name: animation-O;
+    animation-duration: 0.7s;
+}
+
+@keyframes animation-O {
+    0% { color: transparent; }
+    100% { color: blue; }
 }
