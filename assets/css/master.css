@@ -83,8 +83,12 @@ h1 {
     cursor: pointer;
 }
 
-.clickable:active {
+.clickable:hover {
     background: radial-gradient(rgba(0, 0, 0, 0.15), transparent 66%);
+}
+
+.clickable:active {
+    background: radial-gradient(rgba(0, 0, 0, 0.3), transparent 66%);
 }
 
 .X {
