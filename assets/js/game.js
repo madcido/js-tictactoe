@@ -12,6 +12,10 @@ function Game(board, p1, p2) {
         return true;
     }
 
+    this.isOver = () => {
+        return (this.hasWinner() || this.board.isFull());
+    }
+
     this.hasWinner = () => {
         return Game.prototype.winConditions.some((combin) => {
             return combin.every((index) => {
@@ -21,22 +25,14 @@ function Game(board, p1, p2) {
         });
     }
 
-    this.isOver = () => {
-        if (this.hasWinner() || this.isTied()) {
-            this.message = "Tie!"
-            if (this.hasWinner()) {
-                this.currentPlayer.score++;
-                this.message = "Player " + this.currentPlayer.mark + " wins!"
-            }
-            this.board.reset();
-            return true;
-        } else {
-            return false;
+    this.over = () => {
+        let message = "Tie!";
+        if (this.hasWinner()) {
+            this.currentPlayer.score++;
+            message = "Player " + this.currentPlayer.mark + " wins!";
         }
-    }
-
-    this.isTied = () => {
-        return !this.board.tiles.some((tile) => tile == null );
+        this.board.reset();
+        return message;
     }
 
     this.changeCurrentPlayer = () => {

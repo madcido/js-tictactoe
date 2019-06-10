@@ -25,7 +25,7 @@ function playerMove(index) {
     if(game.isValidMove(index)) {
         display.handleMove(index, game.currentPlayer.mark);
         if(game.isOver()) {
-            alert(game.message);
+            alert(game.over());
             display.updateScores(p1, p2);
         }
         game.changeCurrentPlayer();

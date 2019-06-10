@@ -3,4 +3,7 @@ function Board() {
     this.reset = () => {
         this.tiles = new Array(9).fill(null);
     }
+    this.isFull = () => {
+        return !this.tiles.some((tile) => tile == null );
+    }
 }
