@@ -4,4 +4,4 @@ Assignment: https://www.theodinproject.com/courses/javascript/lessons/tic-tac-to
 
 Authors: <a href="https://github.com/btuerker">Burhan Tuerker</a> / <a href="https://github.com/madcido">Fabio Carmo</a>
 
-Preview: https://raw.githack.com/madcido/js-tictactoe/dev/index.html
+Preview: https://raw.githack.com/madcido/js-tictactoe/ai/index.html
