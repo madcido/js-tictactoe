@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css?family=Indie+Flower');
+
+body {
+    font-family: 'Indie Flower', cursive;
+    margin: 0;
+    background-color: #ece5d8;
+        -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+}
+
+h1 {
+    font-size: 40px;
+    margin: 20px;
+    text-align: center;
+}
+
+#reset {
+    width: 30px;
+    height: 30px;
+    background-color: #e00000;
+    border-radius: 50%;
+    border: 1px solid black;
+    box-shadow: 0 -1px 2px #660000 inset;
+    position: absolute;
+    right: 50%;
+    margin-right: -200px;
+    cursor: pointer;
+}
+
+#reset:active {
+    background-color: #c80000;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.7) inset;
+}
+
+#reset img {
+    width: 100%;
+    height: 100%;
+}
+
+#scores {
+    display: flex;
+    justify-content: space-around;
+    width: 400px;
+    margin: 0 auto;
+    font-size: 24px;
+}
+
+.active {
+    position: relative;
+    font-weight: bold;
+}
+
+.active::before {
+  position: absolute;
+  content: '▶';
+  font-size: 16px;
+  left: -20px;
+  top: 6px;
+}
+
+#board {
+    background-image: url("../images/ttt-bg.png");
+    background-size: 500px 500px;
+    background-position: 35% 25%;
+    position: relative;
+    display: grid;
+    grid: 1fr 1fr 1fr / 1fr 1fr 1fr;
+    grid-gap: 5px;
+    width: 400px;
+    height: 400px;
+    margin: 30px auto;
+}
+
+#board div {
+    text-align: center;
+    line-height: 130px;
+    font-size: 100px;
+    cursor: pointer;
+}
+
+.clickable:hover {
+    background: radial-gradient(rgba(0, 0, 0, 0.15), transparent 66%);
+}
+
+.clickable:active {
+    background: radial-gradient(rgba(0, 0, 0, 0.3), transparent 66%);
+}
+
+.X {
+    color: red;
+    animation-name: animation-X;
+    animation-duration: 0.7s;
+}
+
+@keyframes animation-X {
+    0% { color: transparent; }
+    100% { color: red; }
+}
+
+.O {
+    color: blue;
+    animation-name: animation-O;
+    animation-duration: 0.7s;
+}
+
+@keyframes animation-O {
+    0% { color: transparent; }
+    100% { color: blue; }
+}
+
+.custom-alert {
+  position: absolute;
+  /* background: radial-gradient(rgba(0, 0, 0, 0.8), transparent 70%); */
+  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 10px;
+  padding-top: 70px;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  font-size: 60px !important;
+  color: white;
+  text-align: center;
+}
+
+.custom-alert a {
+  text-align:center;
+  font-size: 25px;
+  display: block;
+  color: white;
+}
