@@ -7,11 +7,11 @@ function Game(board, p1, p2) {
 }
 
 Game.prototype.isValidMove = function(index) {
-  if((this.board.tiles[index] === 'X' || this.board.tiles[index] === 'O')) {
-    return false;
-  }
-  this.board.tiles[index] = this.currentPlayer.mark;
-  return true;
+  return !(this.board.tiles[index] === 'X' || this.board.tiles[index] === 'O')
+}
+
+Game.prototype.move = function(index) {
+    this.board.tiles[index] = this.currentPlayer.mark;
 }
 
 Game.prototype.isOver = function() {

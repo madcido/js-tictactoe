@@ -6,7 +6,15 @@
     <link rel="stylesheet" href="./assets/css/master.css">
 </head>
 <body>
-    <div id="reset"><img src="./assets/images/reset.png" onclick="display.resetBoard(); game.board.reset();"></div>
+    <div id="options">
+        <div id="reset">
+            <img src="./assets/images/reset.png" onclick="display.resetBoard(); game.board.reset();">
+        </div>
+        <div>
+            <input id="AI" name="mode" type="checkbox" onchange="changeMode()" checked>
+            <label for="AI">vs. AI</label>
+        </div>
+    </div>
     <h1>Tic-Tac-Toe</h1>
     <div id="scores">
         <div id="p1" class="active">
